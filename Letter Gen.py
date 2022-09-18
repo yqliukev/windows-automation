@@ -23,6 +23,7 @@ def substitution(paragraphs, new_path, base_path, company, position, skills):
         # search for needed paragraphs
         rng = base_file.Content
         rng.Select()
+        sele = word.Selection
         fnd = sele.Find
         fnd.Text = paragraph
         fnd.Execute()
@@ -42,6 +43,7 @@ def substitution(paragraphs, new_path, base_path, company, position, skills):
         fnd = sele.Find
         fnd.Text = paragraph
         fnd.Execute()
+        
         sele.Delete()
 
     # Copy and paste sendoff
@@ -72,7 +74,7 @@ def substitution(paragraphs, new_path, base_path, company, position, skills):
 
 
     # Save Newfile name
-    new_file.SaveAs2(FileName = new_path)
+    new_file.SaveAs2(FileName = new_path, FileFormat = 17)
 
     sleep(1)
 
@@ -86,7 +88,5 @@ def skill_cat(skills):
             result = result + " " + skills[i]
 
 
-        
-
-substitution(["_programming_"], "D:\Documents\Job\Cover Letters\Test Cover Letter", "D:\Documents\Job\Cover Letters\Base Cover Letter.docx", "Bicdroid Inc.", "QA", ["computer proficiency", "communication"])
+substitution(["_programming_", "_problem-solving_", "_programming2_", "_learning_"], "D:\Documents\Job\Cover Letters\PSP Developer Analytics Cover Letter", "D:\Documents\Job\Cover Letters\Base Cover Letter.docx", "PSP", "Developer Analytics", ["computer proficiency", "eagerness to learn"])
 
