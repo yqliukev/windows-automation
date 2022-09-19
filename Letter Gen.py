@@ -81,6 +81,8 @@ def substitution(paragraphs, new_path, base_path, company, position, skills):
 def skill_cat(skills):
     result = ""
     for i in range(len(skills)):
+        if i == 0:
+            result = result + skills[i]
         if i == len(skills) - 1:
             result = result + " and " + skills[i]
             return result
@@ -88,5 +90,5 @@ def skill_cat(skills):
             result = result + " " + skills[i]
 
 
-substitution(["_programming_", "_problem-solving_", "_programming2_", "_learning_"], "D:\Documents\Job\Cover Letters\PSP Developer Analytics Cover Letter", "D:\Documents\Job\Cover Letters\Base Cover Letter.docx", "PSP", "Developer Analytics", ["computer proficiency", "eagerness to learn"])
+substitution(["_programming2_", "_data-analysis_", "_problem-solving_", "_communication_"], "D:\Documents\Job\Cover Letters\KPMG Forensic Data Analyst Cover Letter", "D:\Documents\Job\Cover Letters\Base Cover Letter.docx", "KMPG", "Forensic Data Analyist", ["programming skills", "prior experience"])
 
